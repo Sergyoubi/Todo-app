@@ -1,16 +1,40 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <p class="text-3xl text-gray-800">Task App</p>
+  <AddTask @addNewTask="getNewTask"/>
+  <Task @deleteTask="removeTask" :tasks="tasks"/>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+
+import AddTask from './components/AddTask.vue'
+import Task from './components/Task.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+
+  components: { AddTask, Task },
+
+  data() {
+    return {
+      tasks: [
+        { id: 1, title: 'Task 1', completed: false },
+        { id: 2, title: 'Task 2', completed: false },
+        { id: 3, title: 'Task 3', completed: false },
+        { id: 4, title: 'Task 4', completed: false }
+      ]
+    }
+  },
+
+  methods: {
+    getNewTask(data) {  //sended data from child component is accessed as a function argument
+      this.tasks = [...this.tasks,data] //add new task to the tasks array(sended data ppty must match with data in parent component)
+    },
+
+    removeTask(id) {
+      this.tasks = this.tasks.filter((task) => task.id != id )
+    }
   }
+
 }
 </script>
 
@@ -20,7 +44,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
   margin-top: 60px;
 }
 </style>
