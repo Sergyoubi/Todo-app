@@ -1,6 +1,6 @@
 <template>
   <div class="mx-auto bg-gray-100 mt-10">
-    <p class="flex justify-between items-center">
+    <p class="flex justify-between items-center bg-blue-100">
       <input type="checkbox" :checked="task.completed" @change="markComplete">
 
       <span class="mr-96" :class="{ 'is-complete' :task.completed }">{{ task.title }}</span> <!-- dynamic class is applyed if condition is TRue -->

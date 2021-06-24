@@ -1,8 +1,8 @@
 <template>
-  <div class="w-9/12 h-1/4 mx-auto mt-12">
+  <div class="w-9/12 h-10 mx-auto">
     <form @submit="addTask">
       <div class="w-full h-full flex justify-evenly">
-        <input type="text" v-model="task" placeholder="Type a new Task" required class="w-6/12 border-2 border-gray-400 focus:outline-none">
+        <input type="text" v-model="task" placeholder="Type a new Task" required class="w-6/12 border-2 border-gray-400 focus:outline-none pl-4">
         <input type="submit" name="button" value="Add Task" class="rounded-xl w-1/5 bg-green-200 text-gray-800 hover:bg-green-300">
       </div>
     </form>

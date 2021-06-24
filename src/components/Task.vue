@@ -13,7 +13,3 @@ export default {
   components: { TaskItem }
 }
 </script>
-
-<style scoped>
-
-</style>

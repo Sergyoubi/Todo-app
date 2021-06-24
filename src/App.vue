@@ -1,7 +1,9 @@
 <template>
-  <p class="text-3xl text-gray-800">Task App</p>
-  <AddTask @addNewTask="getNewTask"/>
-  <Task @deleteTask="removeTask" :tasks="tasks"/>
+  <div class="w-screen h-screen bg-gray-100 flex flex-col justify-center space-y-10">
+    <p class="text-3xl text-gray-800 relative">Task App</p>
+    <AddTask @addNewTask="getNewTask"/>
+    <Task @deleteTask="removeTask" :tasks="tasks"/>
+  </div>
 </template>
 
 <script>
@@ -44,6 +46,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  margin-top: 60px;
+
 }
 </style>
